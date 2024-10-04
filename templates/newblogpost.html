@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    </head>
+    <style>
+        /* body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        } */
+
+        input {
+            width: 600px;
+            padding: 10px;
+            margin-bottom: 15px;
+            margin-top: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        textarea {
+            width: 600px;
+            padding: 10px;
+            margin-bottom: 15px;
+            margin-top: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        form{
+            margin-top: 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        button {
+            width: 150px;
+            padding: 10px;
+            background-color: #007BFF;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+    </style>
+
+<body>
+    <div>
+        <ul class="nav justify-content-center shadow-lg custom-header">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="{% url 'homepage' %}">All Blog Posts</a>
+            </li>
+        </ul>
+    </div>
+
+    <div>
+        
+        <form method = 'POST'>
+            {% csrf_token %}
+            <div>
+                <input name="blogtitle" placeholder="BLOG TITLE">
+            </div>
+            <div>
+                <textarea name="blogcontent" placeholder="BLOG POST" rows="10" cols="50"></textarea>
+            </div>
+            <button type="submit">ADD BLOG POST</button>
+        </form>
+
+    </div>
+</body>
+</html>
